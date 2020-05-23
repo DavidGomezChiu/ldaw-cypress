@@ -10,10 +10,10 @@ describe('https://www.nafin.com/portalnf/content/herramientas-de-negocio/simulad
             cy.get('#period').select('2');
             cy.get('#rate').clear().type('15');
             cy.contains('Calcular').click();
-            // modal
+            // quitar la modal
             cy.contains('Ahora no').click();
+            // contar las filas
             cy.get('#resultadosSimulador>tbody').children().should('have.length',24);
-            // contar filas
         });
     });
 }); 
